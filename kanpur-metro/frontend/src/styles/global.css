@@ -1,0 +1,83 @@
+/* ── Kanpur Metro Dashboard – Global Styles ───────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Dark theme (default) */
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-card: #1a2235;
+  --bg-card-hover: #1f2940;
+  --bg-glass: rgba(26, 34, 53, 0.85);
+
+  --text-primary: #f0f4ff;
+  --text-secondary: #8b9ab8;
+  --text-muted: #4a5568;
+
+  --border: rgba(255,255,255,0.07);
+  --border-accent: rgba(255,255,255,0.14);
+
+  --red: #ef4444;
+  --red-dim: rgba(239,68,68,0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59,130,246,0.15);
+  --green: #10b981;
+  --green-dim: rgba(16,185,129,0.12);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.15);
+
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Outfit', sans-serif;
+
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-glass: rgba(255,255,255,0.92);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --border: rgba(0,0,0,0.07);
+  --border-accent: rgba(0,0,0,0.12);
+
+  --red-dim: rgba(239,68,68,0.08);
+  --blue-dim: rgba(59,130,246,0.08);
+  --green-dim: rgba(16,185,129,0.08);
+  --amber-dim: rgba(245,158,11,0.08);
+
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 2px; }
+
+/* Leaflet map fixes */
+.leaflet-container {
+  background: #0d1b2a !important;
+  font-family: var(--font-body);
+}
+[data-theme="light"] .leaflet-container {
+  background: #e8f0fe !important;
+}
+.leaflet-tile { filter: brightness(0.85) saturate(0.7) hue-rotate(200deg); }
+[data-theme="light"] .leaflet-tile { filter: brightness(0.95) saturate(0.8); }
